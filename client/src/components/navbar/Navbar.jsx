@@ -1,18 +1,18 @@
 import React from 'react'
 import {Link, useNavigate} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
-
+import './navbar.css';
 import Avatar from '../avatar/Avatar';
 
 import bars from '../../assets/bars-solid.svg';
 import logo from '../../assets/logo.png';
 import search from '../../assets/search-solid.svg';
-const Navbar = () => {
+const Navbar = ({handleSlidein}) => {
   var User= null;
   return (
     <nav className='main-nav'>
       <div className='navbar'>
-        <button className='slide-in-icon'>
+        <button className='slide-in-icon' onClick={()=>handleSlidein()}>
           <img src={bars} alt='bars' width='15'/>
         </button>
         <div className="navbar-1">
