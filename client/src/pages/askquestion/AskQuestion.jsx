@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import './AskQuestion.css'
+import './Askquestion.css'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import { askquestion } from '../../action/question'
-const AskQuestion = () => {
+const Askquestion = () => {
     const navigate = useNavigate();
     const dispatch=useDispatch();
     const user = useSelector((state)=>state.currentuserreducer)
@@ -75,4 +75,4 @@ const AskQuestion = () => {
     )
 }
 
-export default AskQuestion
+export default Askquestion

@@ -1,8 +1,8 @@
 import React from 'react'
-import './RightSidebar.css'
+import './Rightsidebar.css'
 import Widget from './Widget'
 import Widgettag from './Widgettag'
-const RightSidebar = () => {
+const Rightsidebar = () => {
   return (
     <aside className="right-sidebar">
       <Widget/>
@@ -11,4 +11,4 @@ const RightSidebar = () => {
   )
 }
 
-export default RightSidebar
+export default Rightsidebar

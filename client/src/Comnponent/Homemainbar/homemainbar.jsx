@@ -1,9 +1,9 @@
 import React from 'react'
-import './HomeMainbar.css'
+import './Homemainbar.css'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import QuestionList from './QuestionList'
-function HomeMainbar() {
+import Questionlist from './Questionlist'
+function Homemainbar() {
   const user = useSelector((state)=>state.currentuserreducer)
   const location = useLocation();
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function HomeMainbar() {
       alert("Login or signup to ask a question")
       navigate("/Auth")
     } else {
-      navigate("/AskQuestion") 
+      navigate("/Askquestion")
     }
   }
   return (
@@ -33,7 +33,7 @@ function HomeMainbar() {
         ) : (
           <>
             <p>{questionlist.data.length} questions</p>
-            <QuestionList questionlist={questionlist.data} />
+            <Questionlist questionlist={questionlist.data} />
           </>
         )
         }</div>
@@ -41,4 +41,4 @@ function HomeMainbar() {
   )
 }
 
-export default HomeMainbar
+export default Homemainbar

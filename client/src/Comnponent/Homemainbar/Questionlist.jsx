@@ -1,6 +1,6 @@
 import React from 'react'
 import Question from './Question'
-function QuestionList({questionlist}) {
+function Questionlist({questionlist}) {
   // console.log(questionlist)
   return (
     <>
@@ -11,4 +11,4 @@ function QuestionList({questionlist}) {
   )
 }
 
-export default QuestionList
+export default Questionlist
