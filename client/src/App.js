@@ -1,29 +1,36 @@
-import logo from './logo.svg';
+import { fetchallusers } from './action/users';
 import './App.css';
 import {useEffect, useState} from 'react';
-import Navbar from './components/navbar/Navbar';
-import { BrowserRouter } from 'react-router-dom';
-import AllRoutes from './AllRoutes';
+import Navbar from './Comnponent/Navbar/navbar';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Allroutes from './Allroutes'
+import { useDispatch } from 'react-redux';
+import { fetchallquestion } from './action/question';
 function App() {
-  const [slidein, setSlidein] = useState(true);
+  const [slidein,setslidein]=useState(true)
+  const dispatch=useDispatch()
+useEffect(()=>{
+  dispatch(fetchallusers());
+  dispatch(fetchallquestion());
+},[dispatch])
+
   useEffect(()=>{
-    if(window.innerWidth<=768){
-      setSlidein(false)
+    if(window.innerWidth<= 768){
+      setslidein(false)
     }
-  }, [])
-  const handleSlidein=()=>{
+  },[])
+  const handleslidein=()=>{
     if(window.innerWidth<=768){
-      setSlidein((state)=>!state);
+      setslidein((state)=> !state);
     }
   };
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Navbar handleSlidein={handleSlidein}/>
-        <AllRoutes slidein={slidein} handleSlidein={handleSlidein}/>
-      </BrowserRouter>
-      
+      <Router>
+      <Navbar handleslidein={handleslidein}/>
+      <Allroutes slidein={slidein} handleslidein={handleslidein}/>
+      </Router>
     </div>
   );
 }
